@@ -25,4 +25,8 @@ export default {
 
     return checksum === goodChecksum ? cryptoUtils.toHex(decoded.slice(0, 1)) : null;
   },
+
+  validate(address, currency) {
+
+  },
 };
