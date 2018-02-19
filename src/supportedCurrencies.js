@@ -1,8 +1,8 @@
 export default {
-  bitcoin: 'bitcoin',
-  litecoin: 'litecoin',
-  dogecoin: 'dogecoin',
-  dash: 'dash',
+  bitcoin: 'bitcoin', // done
+  litecoin: 'litecoin', // done
+  dogecoin: 'dogecoin', // done
+  dash: 'dash', // done
   bitcoin_cash: 'bitcoin_cash',
   bitcoin_gold: 'bitcoin_gold',
   ethereum: 'ethereum',

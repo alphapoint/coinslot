@@ -5,7 +5,7 @@ import SUPPORTED_CURRENCIES from '../supportedCurrencies';
 
 const PREFIXES = {
   [SUPPORTED_CURRENCIES.bitcoin]: {prod: ['00', '05'], testnet: ['6f', 'c4']},
-  [SUPPORTED_CURRENCIES.litecoin]: {prod: ['30', '05'], testnet: ['6f', 'c4']},
+  [SUPPORTED_CURRENCIES.litecoin]: {prod: ['30', '05', '32'], testnet: ['6f', 'c4', '3a']},
   [SUPPORTED_CURRENCIES.dogecoin]: {prod: ['1e', '16'], testnet: ['71', 'c4']},
   [SUPPORTED_CURRENCIES.dash]: {prod: ['4c', '10'], testnet: ['8c', '13']},
 };
@@ -61,6 +61,6 @@ export default class DefaultValidator extends BaseValidator {
   getAddressTypes(currency) {
     const addressesTypesObj = PREFIXES[currency];
 
-    return [addressesTypesObj.prod].concat(addressesTypesObj.testnet);
+    return addressesTypesObj.prod.concat(addressesTypesObj.testnet);
   }
 }
