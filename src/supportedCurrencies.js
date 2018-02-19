@@ -1,6 +1,8 @@
 export default {
   bitcoin: 'bitcoin',
   litecoin: 'litecoin',
+  dogecoin: 'dogecoin',
+  dash: 'dash',
   bitcoin_cash: 'bitcoin_cash',
   bitcoin_gold: 'bitcoin_gold',
   ethereum: 'ethereum',
@@ -10,12 +12,10 @@ export default {
   zcash: 'zcash',
   tether: 'tether',
   unobtamium: 'unobtamium',
-  dash: 'dash',
   iota: 'iota',
   stellar: 'stellar',
   neo: 'neo',
   ubiq: 'ubiq',
-  dogecoin: 'dogecoin',
 
   // on the roadmap
   // cardano: 'cardano',

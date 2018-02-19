@@ -1,12 +1,12 @@
 // import addressValidator from 'addressValidator';
-import addressValidator from '../../src/addressValidator';
+import validator from '../../src';
 
 describe('addressValidator', () => {
   describe('not supported currencies', () => {
     test('Should throw error if currency is not supported', () => {
       const currencty = 'not-supported';
 
-      expect(() => addressValidator.validate('hash', currencty)).toThrow();
+      expect(() => validator.validate('hash', currencty)).toThrow();
     });
   });
 });

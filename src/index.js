@@ -1,11 +1,10 @@
-import validator from './addressValidator';
+// import validator from './addressValidator';
+import SUPPORTED_CURRENCIES from './supportedCurrencies';
 
-function foo() {
-  const address1 = '12KYrjTdVGjFMtaxERSk3gphreJ5US8aUP';
+export default function (address, currency) {
+  if (!SUPPORTED_CURRENCIES[currency]) {
+    throw Error(`${currency} is not supported`);
+  }
 
-  console.log(validator.getAddressType(address1));
+  return true;
 }
-
-foo();
-
-export default validator;

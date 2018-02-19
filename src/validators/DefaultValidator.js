@@ -1,9 +1,19 @@
-import cryptoUtils from './cryptoUtils';
-import base58 from './base58';
-import SUPPORTED_CURRENCIES from './supportedCurrencies';
+import cryptoUtils from './utils/cryptoUtils';
+import base58 from './utils/base58';
+import BaseValidator from './BaseValidator';
+import SUPPORTED_CURRENCIES from '../supportedCurrencies';
 
-export default {
-  getAddressType(address) {
+export default class DefaultValidator extends BaseValidator {
+  constructor() {
+    super([
+      SUPPORTED_CURRENCIES.bitcoin,
+      SUPPORTED_CURRENCIES.litecoin,
+      SUPPORTED_CURRENCIES.dogecoin,
+      SUPPORTED_CURRENCIES.dash,
+    ]);
+  }
+
+  getAddressPreffix(address) {
     let decoded;
 
     try {
@@ -25,13 +35,5 @@ export default {
     const goodChecksum = cryptoUtils.sha256(cryptoUtils.sha256(body)).substr(0, 8);
 
     return checksum === goodChecksum ? cryptoUtils.toHex(decoded.slice(0, 1)) : null;
-  },
-
-  validate(address, currency) {
-    if (!SUPPORTED_CURRENCIES[currency]) {
-      throw Error(`${currency} is not supported`);
-    }
-
-    return true;
-  },
-};
+  }
+}
