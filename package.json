@@ -32,5 +32,8 @@
     "rollup-plugin-babel-minify": "^4.0.0",
     "rollup-plugin-commonjs": "^8.3.0",
     "rollup-plugin-node-resolve": "^3.0.3"
+  },
+  "dependencies": {
+    "jssha": "^2.3.1"
   }
 }
