@@ -1,5 +1,6 @@
 import cryptoUtils from './cryptoUtils';
 import base58 from './base58';
+import SUPPORTED_CURRENCIES from './supportedCurrencies';
 
 export default {
   getAddressType(address) {
@@ -27,6 +28,10 @@ export default {
   },
 
   validate(address, currency) {
+    if (!SUPPORTED_CURRENCIES[currency]) {
+      throw Error(`${currency} is not supported`);
+    }
 
+    return true;
   },
 };

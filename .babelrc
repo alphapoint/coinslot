@@ -3,14 +3,8 @@
     [
       "env",
       {
-        "modules": false,
-        "targets": {
-          "browsers": ["last 5 versions"]
-        }
+        "modules": "commonjs"
       }
     ]
   ],
-  "plugins": [
-    "external-helpers"
-  ]
 }

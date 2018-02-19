@@ -1,11 +1,11 @@
-import validator from './addressValiator';
+import validator from './addressValidator';
 
-export default function foo() {
+function foo() {
   const address1 = '12KYrjTdVGjFMtaxERSk3gphreJ5US8aUP';
-  
+
   console.log(validator.getAddressType(address1));
 }
 
 foo();
 
-export const addressValidator = validator;
+export default validator;

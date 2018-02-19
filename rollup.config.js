@@ -21,7 +21,20 @@ export default {
     resolve(),
     commonjs(),
     babel({
+      babelrc: false,
+      presets: [
+        [
+          'env',
+          {
+            modules: false,
+            targets: ['latest 5 versions'],
+          },
+        ],
+      ],
       exclude: 'node_modules/**',
+      plugins: [
+        'external-helpers',
+      ],
     }),
     minify(),
   ],

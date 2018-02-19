@@ -10,6 +10,7 @@ module.exports = {
   ],
   coveragePathIgnorePatterns: [
     'src/base58.js',
+    'src/cryptoUtils.js',
   ],
   clearMocks: true,
   collectCoverage: true,
