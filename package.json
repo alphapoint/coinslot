@@ -34,6 +34,7 @@
     "rollup-plugin-node-resolve": "^3.0.3"
   },
   "dependencies": {
+    "bchaddrjs": "^0.2.0",
     "jssha": "^2.3.1"
   }
 }
