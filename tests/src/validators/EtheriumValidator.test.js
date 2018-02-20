@@ -2,19 +2,24 @@ import EtheriumValidator from 'validators/EtheriumValidator';
 import SUPPORTED_CURRENCIES from 'supportedCurrencies';
 
 describe('EtheriumValidator', () => {
-  describe('Method validate', () => {
-    const validator = new EtheriumValidator();
+  const validator = new EtheriumValidator();
 
+  test('Should be applied for etherium', () => {
+    const result = validator.isAppliedFor(SUPPORTED_CURRENCIES.ethereum);
+
+    expect(result).toBe(true);
+  });
+
+  describe('Method validate', () => {
     const validAddress = (address) => {
       const isValid = validator.validate(address);
       expect(isValid).toBe(true);
     };
 
-    test('Should be applied for etherium', () => {
-      const result = validator.isAppliedFor(SUPPORTED_CURRENCIES.ethereum);
-
-      expect(result).toBe(true);
-    });
+    const invalidAddress = (address) => {
+      const isValid = validator.validate(address);
+      expect(isValid).toBe(false);
+    };
 
     test('Should be applied for etherium classic', () => {
       const result = validator.isAppliedFor(SUPPORTED_CURRENCIES.ethereum_classic);
@@ -64,6 +69,12 @@ describe('EtheriumValidator', () => {
       test('Should validate Ethereum classic address', () => {
         validAddress('0x304a554a310C7e546dfe434669C62820b7D83490');
       });
+    });
+
+    test('Invalid addresses', () => {
+      invalidAddress('');
+      invalidAddress('@@');
+      invalidAddress('12QeMLzSrB8XH8FvEzPMVoRxVAzTr5XM2y'); // bitcoin address
     });
   });
 });

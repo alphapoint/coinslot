@@ -7,7 +7,7 @@ export default {
   bitcoin_gold: 'bitcoin_gold', // done
   ethereum: 'ethereum', // done
   ethereum_classic: 'ethereum_classic', // done
-  monero: 'monero',
+  monero: 'monero', // done
   ripple: 'ripple',
   zcash: 'zcash', // done
   tether: 'tether',
