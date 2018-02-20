@@ -40,48 +40,48 @@ describe('DefaultValidator', () => {
   });
 
   describe('Method getAddressPrefix', () => {
-    const getAddressPrefix = (address) => {
+    const getAddressPrefix = (address, prefixLength) => {
       const defaultValidator = new DefaultValidator();
-      return defaultValidator.getAddressPrefix(address);
+      return defaultValidator.getAddressPrefix(address, prefixLength);
     };
 
     test('Should return correct address prefix', () => {
-      expect(getAddressPrefix('136Ed4MxoHU7K8VdU4n53yjLhPnmzPP5Ch'))
+      expect(getAddressPrefix('136Ed4MxoHU7K8VdU4n53yjLhPnmzPP5Ch', 1))
         .toBe('00');
     });
 
     test('Should return correct address prefix', () => {
-      expect(getAddressPrefix('12KYrjTdVGjFMtaxERSk3gphreJ5US8aUP'))
+      expect(getAddressPrefix('12KYrjTdVGjFMtaxERSk3gphreJ5US8aUP', 1))
         .toBe('00');
     });
 
     test('Should return correct address prefix', () => {
-      expect(getAddressPrefix('12QeMLzSrB8XH8FvEzPMVoRxVAzTr5XM2y'))
+      expect(getAddressPrefix('12QeMLzSrB8XH8FvEzPMVoRxVAzTr5XM2y', 1))
         .toBe('00');
     });
 
     test('Should return correct address prefix', () => {
-      expect(getAddressPrefix('1oNLrsHnBcR6dpaBpwz3LSwutbUNkNSjs'))
+      expect(getAddressPrefix('1oNLrsHnBcR6dpaBpwz3LSwutbUNkNSjs', 1))
         .toBe('00');
     });
 
     test('Should return correct address prefix', () => {
-      expect(getAddressPrefix('mzBc4XEFSdzCDcTxAgf6EZXgsZWpztRhef'))
+      expect(getAddressPrefix('mzBc4XEFSdzCDcTxAgf6EZXgsZWpztRhef', 1))
         .toBe('6f');
     });
 
     test('Should return correct address prefix', () => {
-      expect(getAddressPrefix('1SQHtwR5oJRKLfiWQ2APsAd9miUc4k2ez'))
+      expect(getAddressPrefix('1SQHtwR5oJRKLfiWQ2APsAd9miUc4k2ez', 1))
         .toBe('00');
     });
 
     test('Should return correct address prefix', () => {
-      expect(getAddressPrefix('3NJZLcZEEYBpxYEUGewU4knsQRn1WM5Fkt'))
+      expect(getAddressPrefix('3NJZLcZEEYBpxYEUGewU4knsQRn1WM5Fkt', 1))
         .toBe('05');
     });
 
     test('Should return correct address prefix', () => {
-      expect(getAddressPrefix('2MxKEf2su6FGAUfCEAHreGFQvEYrfYNHvL7'))
+      expect(getAddressPrefix('2MxKEf2su6FGAUfCEAHreGFQvEYrfYNHvL7', 1))
         .toBe('c4');
     });
   });
@@ -181,6 +181,16 @@ describe('DefaultValidator', () => {
 
       test('Invalid addresses', () => {
         commonInvalid(SUPPORTED_CURRENCIES.bitcoin_gold);
+      });
+    });
+
+    describe('Zcash validation', () => {
+      test('Valid addresses', () => {
+        validAddress('t1RwJ3uKwHacZXSPWzMsYk4vq5nC3NUMNSo', SUPPORTED_CURRENCIES.zcash);
+      });
+
+      test('Invalid addresses', () => {
+        commonInvalid(SUPPORTED_CURRENCIES.zcash);
       });
     });
   });

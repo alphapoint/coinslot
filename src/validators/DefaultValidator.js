@@ -9,14 +9,19 @@ const PREFIXES = {
   [SUPPORTED_CURRENCIES.dogecoin]: {prod: ['1e', '16'], testnet: ['71', 'c4']},
   [SUPPORTED_CURRENCIES.dash]: {prod: ['4c', '10'], testnet: ['8c', '13']},
   [SUPPORTED_CURRENCIES.bitcoin_gold]: {prod: ['26', '17']},
+  [SUPPORTED_CURRENCIES.zcash]: {prod: ['1cb8', '1cbd'], testnet: ['1d25', '1cba']},
 };
+// RIPEMD-160 hash function produce a 160-bit output
+const bodyBytesCount = 20;
+// first 4 bytes are taken from SHA-256(SHA-256(input))
+const checksumBytesCount = 4;
 
 export default class DefaultValidator extends BaseValidator {
   constructor() {
     super(Object.keys(PREFIXES));
   }
 
-  getAddressPrefix(address) {
+  getAddressPrefix(address, prefixLength) {
     let decoded;
 
     try {
@@ -28,8 +33,7 @@ export default class DefaultValidator extends BaseValidator {
 
     const length = decoded.length;
 
-    // should be 25 bytes per btc address spec
-    if (length !== 25) {
+    if (length !== prefixLength + bodyBytesCount + checksumBytesCount) {
       return null;
     }
 
@@ -37,7 +41,7 @@ export default class DefaultValidator extends BaseValidator {
     const body = cryptoUtils.toHex(decoded.slice(0, length - 4));
     const goodChecksum = cryptoUtils.sha256(cryptoUtils.sha256(body)).substr(0, 8);
 
-    return checksum === goodChecksum ? cryptoUtils.toHex(decoded.slice(0, 1)) : null;
+    return checksum === goodChecksum ? cryptoUtils.toHex(decoded.slice(0, prefixLength)) : null;
   }
 
   /**
@@ -45,8 +49,9 @@ export default class DefaultValidator extends BaseValidator {
    * @param {String} currency
    */
   validate(address, currency) {
-    const addressType = this.getAddressPrefix(address);
     const correctAddressTypes = this.getAddressTypes(currency);
+    const prefixLength = this.getPrefixLength(correctAddressTypes);
+    const addressType = this.getAddressPrefix(address, prefixLength);
 
     return correctAddressTypes.indexOf(addressType) >= 0;
   }
@@ -58,5 +63,11 @@ export default class DefaultValidator extends BaseValidator {
     const addressesTypesObj = PREFIXES[currency];
 
     return addressesTypesObj.prod.concat(addressesTypesObj.testnet);
+  }
+
+  getPrefixLength(prefixes) {
+    // prefix is two letter hex number
+    const result = prefixes[0].length / 2;
+    return result;
   }
 }

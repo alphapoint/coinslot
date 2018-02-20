@@ -27,7 +27,7 @@ export default {
           'env',
           {
             modules: false,
-            targets: ['latest 5 versions'],
+            targets: ['last 5 versions'],
           },
         ],
       ],
