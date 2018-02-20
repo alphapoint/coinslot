@@ -37,7 +37,9 @@ export default {
         'external-helpers',
       ],
     }),
-    minify(),
+    minify({
+      comments: false,
+    }),
     filesize(),
   ],
 };

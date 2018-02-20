@@ -12,7 +12,7 @@ export default {
   zcash: 'zcash', // done
   tether: 'tether', // done
   unobtamium: 'unobtamium', // done
-  iota: 'iota',
+  iota: 'iota', // done
   stellar: 'stellar',
   neo: 'neo',
   ubiq: 'ubiq',

@@ -3,6 +3,7 @@ import BitcoinCashValidator from './validators/BitcoinCashValidator';
 import EtheriumValidator from './validators/EtheriumValidator';
 import MoneroValidator from './validators/MoneroValidator';
 import RippleValidator from './validators/RippleValidator';
+import IotaValidator from './validators/IotaValidator';
 import SUPPORTED_CURRENCIES from './supportedCurrencies';
 
 export default function (address, currency) {
