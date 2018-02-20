@@ -167,7 +167,6 @@ describe('DefaultValidator', () => {
       test('Valid addresses', () => {
         // 4c
         validAddress('XekiLaxnqpFb2m4NQAEcsKutZcZgcyfo6W', SUPPORTED_CURRENCIES.dash);
-        validAddress('XekiLaxnqpFb2m4NQAEcsKutZcZgcyfo6W', SUPPORTED_CURRENCIES.dash);
       });
 
       test('Invalid addresses', () => {

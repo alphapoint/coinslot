@@ -5,8 +5,8 @@ export default {
   dash: 'dash', // done
   bitcoin_cash: 'bitcoin_cash', // done
   bitcoin_gold: 'bitcoin_gold', // done
-  ethereum: 'ethereum',
-  ethereum_classic: 'ethereum_classic',
+  ethereum: 'ethereum', // done
+  ethereum_classic: 'ethereum_classic', // done
   monero: 'monero',
   ripple: 'ripple',
   zcash: 'zcash',
