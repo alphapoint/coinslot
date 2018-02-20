@@ -3,33 +3,20 @@ import SUPPORTED_CURRENCIES from 'supportedCurrencies';
 
 describe('DefaultValidator', () => {
   describe('Method isAppliedFor', () => {
-    test('Should be applied for bitcoin', () => {
-      const defaultValidator = new DefaultValidator();
-      const isApplied = defaultValidator.isAppliedFor(SUPPORTED_CURRENCIES.bitcoin);
+    const isAppliedFor = (currency) => {
+      test(`Should be applied for ${currency}`, () => {
+        const defaultValidator = new DefaultValidator();
+        const isApplied = defaultValidator.isAppliedFor(currency);
 
-      expect(isApplied).toBe(true);
-    });
+        expect(isApplied).toBe(true);
+      });
+    };
 
-    test('Should be applied for litecoin', () => {
-      const defaultValidator = new DefaultValidator();
-      const isApplied = defaultValidator.isAppliedFor(SUPPORTED_CURRENCIES.litecoin);
-
-      expect(isApplied).toBe(true);
-    });
-
-    test('Should be applied for dogecoin', () => {
-      const defaultValidator = new DefaultValidator();
-      const isApplied = defaultValidator.isAppliedFor(SUPPORTED_CURRENCIES.dogecoin);
-
-      expect(isApplied).toBe(true);
-    });
-
-    test('Should be applied for dash', () => {
-      const defaultValidator = new DefaultValidator();
-      const isApplied = defaultValidator.isAppliedFor(SUPPORTED_CURRENCIES.dash);
-
-      expect(isApplied).toBe(true);
-    });
+    isAppliedFor(SUPPORTED_CURRENCIES.bitcoin);
+    isAppliedFor(SUPPORTED_CURRENCIES.litecoin);
+    isAppliedFor(SUPPORTED_CURRENCIES.dogecoin);
+    isAppliedFor(SUPPORTED_CURRENCIES.dash);
+    isAppliedFor(SUPPORTED_CURRENCIES.tether);
 
     test('Should not be applied for unknown currency', () => {
       const defaultValidator = new DefaultValidator();
@@ -191,6 +178,21 @@ describe('DefaultValidator', () => {
 
       test('Invalid addresses', () => {
         commonInvalid(SUPPORTED_CURRENCIES.zcash);
+      });
+    });
+
+    describe('Tether validation', () => {
+      test('Valid addresses', () => {
+        // 00 address prefix
+        validAddress('1HckjUpRGcrrRAtFaaCAUaGjsPx9oYmLaZ', SUPPORTED_CURRENCIES.tether);
+        validAddress('1FoWyxwPXuj4C6abqwhjDWdz6D4PZgYRjA', SUPPORTED_CURRENCIES.tether);
+        // 05 address prefix
+        validAddress('3GyeFJmQynJWd8DeACm4cdEnZcckAtrfcN', SUPPORTED_CURRENCIES.tether);
+        validAddress('3EEFW1BuoZ2a3Jbtjwa8w54K3cBXTfAWmc', SUPPORTED_CURRENCIES.tether);
+      });
+
+      test('Invalid addresses', () => {
+        commonInvalid(SUPPORTED_CURRENCIES.tether);
       });
     });
   });

@@ -8,9 +8,9 @@ export default {
   ethereum: 'ethereum', // done
   ethereum_classic: 'ethereum_classic', // done
   monero: 'monero', // done
-  ripple: 'ripple',
+  ripple: 'ripple', // done
   zcash: 'zcash', // done
-  tether: 'tether',
+  tether: 'tether', // done
   unobtamium: 'unobtamium',
   iota: 'iota',
   stellar: 'stellar',

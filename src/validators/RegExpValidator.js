@@ -1,6 +1,6 @@
 import BaseValidator from './BaseValidator';
 
-export default class BitcoinCashValidator extends BaseValidator {
+export default class RegExpValidator extends BaseValidator {
   constructor(supportedCurrencies, regExp) {
     super(supportedCurrencies);
 
