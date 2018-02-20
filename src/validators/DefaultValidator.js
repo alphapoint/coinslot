@@ -8,16 +8,12 @@ const PREFIXES = {
   [SUPPORTED_CURRENCIES.litecoin]: {prod: ['30', '05', '32'], testnet: ['6f', 'c4', '3a']},
   [SUPPORTED_CURRENCIES.dogecoin]: {prod: ['1e', '16'], testnet: ['71', 'c4']},
   [SUPPORTED_CURRENCIES.dash]: {prod: ['4c', '10'], testnet: ['8c', '13']},
+  [SUPPORTED_CURRENCIES.bitcoin_gold]: {prod: ['26', '17']},
 };
 
 export default class DefaultValidator extends BaseValidator {
   constructor() {
-    super([
-      SUPPORTED_CURRENCIES.bitcoin,
-      SUPPORTED_CURRENCIES.litecoin,
-      SUPPORTED_CURRENCIES.dogecoin,
-      SUPPORTED_CURRENCIES.dash,
-    ]);
+    super(Object.keys(PREFIXES));
   }
 
   getAddressPrefix(address) {

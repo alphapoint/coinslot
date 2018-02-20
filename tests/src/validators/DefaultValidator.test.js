@@ -174,5 +174,15 @@ describe('DefaultValidator', () => {
         commonInvalid(SUPPORTED_CURRENCIES.dash);
       });
     });
+
+    describe('Bitcoin gold validation', () => {
+      test('Valid addresses', () => {
+        validAddress('GKwA3Bgun95QPbnvQ1SBUk5EcZaczuAcpa', SUPPORTED_CURRENCIES.bitcoin_gold);
+      });
+
+      test('Invalid addresses', () => {
+        commonInvalid(SUPPORTED_CURRENCIES.bitcoin_gold);
+      });
+    });
   });
 });
