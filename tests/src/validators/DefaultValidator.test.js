@@ -195,5 +195,16 @@ describe('DefaultValidator', () => {
         commonInvalid(SUPPORTED_CURRENCIES.tether);
       });
     });
+
+    describe('Unobtamium validation', () => {
+      test('Valid addresses', () => {
+        validAddress('uewrE9QWc54EXjCZehWDPkjqgsyRDpQmK8', SUPPORTED_CURRENCIES.unobtamium);
+        validAddress('udd3MtriehuH5vbT2w9ALJdcFLctUY3GfY', SUPPORTED_CURRENCIES.unobtamium);
+      });
+
+      test('Invalid addresses', () => {
+        commonInvalid(SUPPORTED_CURRENCIES.zcash);
+      });
+    });
   });
 });

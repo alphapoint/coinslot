@@ -11,7 +11,7 @@ export default {
   ripple: 'ripple', // done
   zcash: 'zcash', // done
   tether: 'tether', // done
-  unobtamium: 'unobtamium',
+  unobtamium: 'unobtamium', // done
   iota: 'iota',
   stellar: 'stellar',
   neo: 'neo',
