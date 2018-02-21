@@ -1,6 +1,6 @@
 import DefaultValidator from './validators/DefaultValidator';
 import BitcoinCashValidator from './validators/BitcoinCashValidator';
-import EtheriumValidator from './validators/EtheriumValidator';
+import EthereumValidator from './validators/EthereumValidator';
 import MoneroValidator from './validators/MoneroValidator';
 import RippleValidator from './validators/RippleValidator';
 import IotaValidator from './validators/IotaValidator';

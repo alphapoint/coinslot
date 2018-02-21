@@ -1,10 +1,10 @@
-import EtheriumValidator from 'validators/EtheriumValidator';
+import EthereumValidator from 'validators/EthereumValidator';
 import SUPPORTED_CURRENCIES from 'supportedCurrencies';
 
-describe('EtheriumValidator', () => {
-  const validator = new EtheriumValidator();
+describe('EthereumValidator', () => {
+  const validator = new EthereumValidator();
 
-  test('Should be applied for etherium', () => {
+  test('Should be applied for ethereum', () => {
     const result = validator.isAppliedFor(SUPPORTED_CURRENCIES.ethereum);
 
     expect(result).toBe(true);
@@ -21,13 +21,13 @@ describe('EtheriumValidator', () => {
       expect(isValid).toBe(false);
     };
 
-    test('Should be applied for etherium classic', () => {
+    test('Should be applied for ethereum classic', () => {
       const result = validator.isAppliedFor(SUPPORTED_CURRENCIES.ethereum_classic);
 
       expect(result).toBe(true);
     });
 
-    test('Shold validate Etherium address', () => {
+    test('Shold validate Ethereum address', () => {
       validAddress('0x0096ca31c87771a2ed212d4b2e689e712bd938f9');
     });
 
@@ -68,6 +68,13 @@ describe('EtheriumValidator', () => {
     describe('Ethereum classic', () => {
       test('Should validate Ethereum classic address', () => {
         validAddress('0x304a554a310C7e546dfe434669C62820b7D83490');
+      });
+    });
+
+    describe('Ubiq', () => {
+      test('Should validate Ubiq address', () => {
+        validAddress('0x18520a8aaf5142e0d788db696bb46124b2e7bb9b');
+        validAddress('0x7afd95cb0650da13434a6210e2ed7e31a5285447');
       });
     });
 
