@@ -3,6 +3,7 @@ import commonjs from 'rollup-plugin-commonjs';
 import babel from 'rollup-plugin-babel';
 import minify from 'rollup-plugin-babel-minify';
 import filesize from 'rollup-plugin-filesize';
+import builtins from 'rollup-plugin-node-builtins';
 import pkg from './package.json';
 
 export default {
@@ -41,5 +42,6 @@ export default {
       comments: false,
     }),
     filesize(),
+    builtins(),
   ],
 };
