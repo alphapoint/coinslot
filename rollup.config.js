@@ -21,7 +21,10 @@ export default {
     },
   ],
   plugins: [
-    resolve(),
+    resolve({
+      browser: true,
+      preferBuiltins: true,
+    }),
     commonjs(),
     babel({
       babelrc: false,

@@ -26,3 +26,5 @@ export function validate(address, currency) {
 
   return validatorForCurrency.validate(address, currency);
 }
+
+export {SUPPORTED_CURRENCIES};
