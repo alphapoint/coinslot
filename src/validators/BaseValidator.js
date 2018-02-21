@@ -6,4 +6,8 @@ export default class BaseValidator {
   isAppliedFor(currency) {
     return this.supportedCurrencies.some(supportedCurrency => supportedCurrency === currency);
   }
+
+  getSupportedCurrencies() {
+    return this.supportedCurrencies;
+  }
 }
