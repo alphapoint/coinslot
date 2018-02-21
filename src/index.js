@@ -8,13 +8,13 @@ import StellarValidator from './validators/StellarValidator';
 import SUPPORTED_CURRENCIES from './supportedCurrencies';
 
 const supportedValidators = [
-  DefaultValidator,
-  BitcoinCashValidator,
-  EthereumValidator,
-  MoneroValidator,
-  RippleValidator,
-  IotaValidator,
-  StellarValidator,
+  new BitcoinCashValidator(),
+  new EthereumValidator(),
+  new MoneroValidator(),
+  new RippleValidator(),
+  new IotaValidator(),
+  new StellarValidator(),
+  new DefaultValidator(),
 ];
 
 export default function (address, currency) {
@@ -22,16 +22,7 @@ export default function (address, currency) {
     throw Error(`${currency} is not supported`);
   }
 
-  let validatorForCurrency;
-
-  for (let i = 0; i < supportedValidators.length; i++) {
-    const validator = new supportedValidators[i]();
-
-    if (validator.isAppliedFor(currency)) {
-      validatorForCurrency = validator;
-      break;
-    }
-  }
+  const validatorForCurrency = supportedValidators.find(item => item.isAppliedFor(currency));
 
   return validatorForCurrency.validate(address, currency);
 }
