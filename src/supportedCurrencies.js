@@ -14,7 +14,7 @@ export default {
   unobtamium: 'unobtamium', // done
   iota: 'iota', // done
   stellar: 'stellar',
-  neo: 'neo',
+  neo: 'neo', // done
   ubiq: 'ubiq',
 
   // on the roadmap

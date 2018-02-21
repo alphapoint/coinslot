@@ -206,5 +206,17 @@ describe('DefaultValidator', () => {
         commonInvalid(SUPPORTED_CURRENCIES.zcash);
       });
     });
+
+    describe('Neo validation', () => {
+      test('Valid addresses', () => {
+        validAddress('ASNTYS3gWwD9W6JCEMzMjJ93Ssu2ei7gos', SUPPORTED_CURRENCIES.neo);
+        validAddress('ASw26FWgCbgXf38G1JNvLjnkYrQhmaaJtA', SUPPORTED_CURRENCIES.neo);
+        validAddress('ANMDLP26dPkJE4mNM1YX6GuBf3JeoizMZ5', SUPPORTED_CURRENCIES.neo);
+      });
+
+      test('Invalid addresses', () => {
+        commonInvalid(SUPPORTED_CURRENCIES.neo);
+      });
+    });
   });
 });

@@ -14,6 +14,7 @@ const PREFIXES = {
   [SUPPORTED_CURRENCIES.zcash]: {prod: ['1cb8', '1cbd'], testnet: ['1d25', '1cba']},
   [SUPPORTED_CURRENCIES.tether]: BICTOIN_PREFIXES,
   [SUPPORTED_CURRENCIES.unobtamium]: {prod: ['82', '1e'], testnet: ['44', '1e']},
+  [SUPPORTED_CURRENCIES.neo]: {prod: ['17']},
 };
 // RIPEMD-160 hash function produce a 160-bit output
 const bodyBytesCount = 20;
