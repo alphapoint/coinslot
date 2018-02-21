@@ -4,6 +4,7 @@ import EthereumValidator from './validators/EthereumValidator';
 import MoneroValidator from './validators/MoneroValidator';
 import RippleValidator from './validators/RippleValidator';
 import IotaValidator from './validators/IotaValidator';
+import StellarValidator from './validators/StellarValidator';
 import SUPPORTED_CURRENCIES from './supportedCurrencies';
 
 export default function (address, currency) {

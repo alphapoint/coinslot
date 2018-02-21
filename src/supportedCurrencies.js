@@ -1,20 +1,20 @@
 export default {
-  bitcoin: 'bitcoin', // done
-  litecoin: 'litecoin', // done
-  dogecoin: 'dogecoin', // done
-  dash: 'dash', // done
-  bitcoin_cash: 'bitcoin_cash', // done
-  bitcoin_gold: 'bitcoin_gold', // done
-  ethereum: 'ethereum', // done
-  ethereum_classic: 'ethereum_classic', // done
-  monero: 'monero', // done
-  ripple: 'ripple', // done
-  zcash: 'zcash', // done
-  tether: 'tether', // done
-  unobtamium: 'unobtamium', // done
-  iota: 'iota', // done
+  bitcoin: 'bitcoin',
+  litecoin: 'litecoin',
+  dogecoin: 'dogecoin',
+  dash: 'dash',
+  bitcoin_cash: 'bitcoin_cash',
+  bitcoin_gold: 'bitcoin_gold',
+  ethereum: 'ethereum',
+  ethereum_classic: 'ethereum_classic',
+  monero: 'monero',
+  ripple: 'ripple',
+  zcash: 'zcash',
+  tether: 'tether',
+  unobtamium: 'unobtamium',
+  iota: 'iota',
   stellar: 'stellar',
-  neo: 'neo', // done
+  neo: 'neo',
   ubiq: 'ubiq',
 
   // on the roadmap

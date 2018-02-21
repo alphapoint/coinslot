@@ -35,7 +35,9 @@
     "rollup-plugin-node-resolve": "^3.0.3"
   },
   "dependencies": {
+    "base32.js": "^0.1.0",
     "bchaddrjs": "^0.2.0",
+    "crc": "^3.5.0",
     "ethereum-address": "0.0.4",
     "iota.lib.js": "^0.4.7",
     "jssha": "^2.3.1",
