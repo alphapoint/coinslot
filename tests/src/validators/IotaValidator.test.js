@@ -16,5 +16,11 @@ describe('IotaValidator', () => {
 
       expect(isValid).toBe(true);
     });
+
+    test('Invalid address', () => {
+      const isValid = validator.validate('IIAIKOQPKLXGSIR#!@#!*&SasdasUJMPPQVPTILWXOOVGXOJSNQBIGOZRWFFLAARUC9RTHQATTU9');
+
+      expect(isValid).toBe(false);
+    });
   });
 });

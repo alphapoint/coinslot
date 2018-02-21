@@ -10,6 +10,12 @@ export default class IotaValidator extends BaseValidator {
   }
 
   validate(address, currency) {
-    return isValidChecksum(address);
+    let result;
+    try {
+      result = isValidChecksum(address);
+    } catch (err) {
+      result = false;
+    }
+    return result;
   }
 }
