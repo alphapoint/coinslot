@@ -4,6 +4,7 @@ import babel from 'rollup-plugin-babel';
 import minify from 'rollup-plugin-babel-minify';
 import filesize from 'rollup-plugin-filesize';
 import builtins from 'rollup-plugin-node-builtins';
+import global from 'rollup-plugin-node-globals';
 import pkg from './package.json';
 
 export default {
@@ -43,5 +44,6 @@ export default {
     }),
     filesize(),
     builtins(),
+    global(),
   ],
 };

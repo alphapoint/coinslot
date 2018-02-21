@@ -17,7 +17,7 @@ const supportedValidators = [
   new DefaultValidator(),
 ];
 
-export default function (address, currency) {
+export function validate(address, currency) {
   if (!SUPPORTED_CURRENCIES[currency]) {
     throw Error(`${currency} is not supported`);
   }

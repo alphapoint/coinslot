@@ -1,4 +1,4 @@
-import validateAddress from '../../src';
+import {validate} from '../../src';
 import SUPPORTED_CURRENCIES from '../../src/supportedCurrencies';
 
 describe('Index', () => {
@@ -6,7 +6,7 @@ describe('Index', () => {
     test('Should throw error if currency is not supported', () => {
       const currencty = 'not-supported';
 
-      expect(() => validateAddress('hash', currencty)).toThrow();
+      expect(() => validate('hash', currencty)).toThrow();
     });
   });
 
@@ -16,7 +16,7 @@ describe('Index', () => {
         const anyWalletAddress = 'f123Fg24Fcas_somehash';
 
         expect(() => {
-          validateAddress(anyWalletAddress, currency);
+          validate(anyWalletAddress, currency);
         }).not.toThrow();
       });
     };
