@@ -2,8 +2,11 @@
   "name": "coinslot",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "dist/index.umd.js",
+  "module": "dist/index.esm.js",
   "scripts": {
+    "build": "rollup -c",
+    "dev": "rollup -c -w",
     "test": "jest"
   },
   "repository": {
@@ -15,6 +18,31 @@
   },
   "homepage": "https://github.com/alphapoint/coinslot#readme",
   "devDependencies": {
-    "jest": "^22.3.0"
+    "babel-core": "^6.26.0",
+    "babel-jest": "^22.2.2",
+    "babel-plugin-external-helpers": "^6.22.0",
+    "babel-preset-env": "^1.6.1",
+    "eslint": "^4.18.0",
+    "eslint-config-airbnb-base": "^12.1.0",
+    "eslint-plugin-import": "^2.8.0",
+    "jest": "^22.3.0",
+    "regenerator-runtime": "^0.11.1",
+    "rollup": "^0.56.2",
+    "rollup-plugin-babel": "^3.0.3",
+    "rollup-plugin-babel-minify": "^4.0.0",
+    "rollup-plugin-commonjs": "^8.3.0",
+    "rollup-plugin-filesize": "^1.5.0",
+    "rollup-plugin-node-builtins": "^2.1.2",
+    "rollup-plugin-node-globals": "^1.1.0",
+    "rollup-plugin-node-resolve": "^3.0.3"
+  },
+  "dependencies": {
+    "base32.js": "^0.1.0",
+    "bchaddrjs": "^0.2.0",
+    "crc": "^3.5.0",
+    "ethereum-address": "0.0.4",
+    "iota.lib.js": "^0.4.7",
+    "jssha": "^2.3.1",
+    "ripple-address-codec": "^2.0.1"
   }
 }

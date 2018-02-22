@@ -5,8 +5,6 @@ build/
 *.log
 .swp
 .eslintcache
-vezio-jobs-backups/
-vezio-core-dump.tar
 .coverage
 coverage/
 package-lock.json
