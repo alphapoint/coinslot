@@ -218,5 +218,16 @@ describe('DefaultValidator', () => {
         commonInvalid(SUPPORTED_CURRENCIES.neo);
       });
     });
+
+    describe('Qtum validation', () => {
+      test('Valid addresses', () => {
+        validAddress('QjHVMg32PtgkGTVQAb1EgnothX13SFugRF', SUPPORTED_CURRENCIES.qtum);
+        validAddress('QbSeum1op1YYc23NVwHT7Bio7Cb2TrJESW', SUPPORTED_CURRENCIES.qtum);
+      });
+
+      test('Invalid addresses', () => {
+        commonInvalid(SUPPORTED_CURRENCIES.qtum);
+      });
+    });
   });
 });

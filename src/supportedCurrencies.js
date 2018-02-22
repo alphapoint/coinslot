@@ -24,10 +24,10 @@ export default {
   stellar: 'XLM',
   neo: 'NEO',
   ubiq: 'UBQ',
+  qtum: 'QTUM',
 
   // on the roadmap
   // cardano: 'cardano',
-  // qtum: 'qtum',
   // wavescoin: 'wavescoin',
   // siacoin: 'siacoin',
   // decred: 'decred',

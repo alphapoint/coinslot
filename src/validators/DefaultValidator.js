@@ -15,6 +15,7 @@ const PREFIXES = {
   [SUPPORTED_CURRENCIES.tether]: BITCOIN_PREFIXES,
   [SUPPORTED_CURRENCIES.unobtamium]: {prod: ['82', '1e'], testnet: ['44', '1e']},
   [SUPPORTED_CURRENCIES.neo]: {prod: ['17']},
+  [SUPPORTED_CURRENCIES.qtum]: {prod: ['3a', '32'], testnet: ['78', '6e']},
 };
 // RIPEMD-160 hash function produce a 160-bit output
 const bodyBytesCount = 20;
