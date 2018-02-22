@@ -4,10 +4,25 @@ import SUPPORTED_CURRENCIES from 'supportedCurrencies';
 describe('EthereumValidator', () => {
   const validator = new EthereumValidator();
 
-  test('Should be applied for ethereum', () => {
-    const result = validator.isAppliedFor(SUPPORTED_CURRENCIES.ethereum);
+  describe('Method isAppliedFor', () => {
+    const isAppliedFor = (currency) => {
+      test(`Should be applied for ${currency}`, () => {
+        const isApplied = validator.isAppliedFor(currency);
 
-    expect(result).toBe(true);
+        expect(isApplied).toBe(true);
+      });
+    };
+
+    isAppliedFor(SUPPORTED_CURRENCIES.ethereum);
+    isAppliedFor(SUPPORTED_CURRENCIES.ethereum_classic);
+    isAppliedFor(SUPPORTED_CURRENCIES.omise_go);
+    isAppliedFor(SUPPORTED_CURRENCIES.augur);
+    isAppliedFor(SUPPORTED_CURRENCIES.eos);
+    isAppliedFor(SUPPORTED_CURRENCIES.fuel);
+    isAppliedFor(SUPPORTED_CURRENCIES.status);
+    isAppliedFor(SUPPORTED_CURRENCIES.singularDTV);
+    isAppliedFor(SUPPORTED_CURRENCIES.genesis_coin);
+    isAppliedFor(SUPPORTED_CURRENCIES.ubiq);
   });
 
   describe('Method validate', () => {

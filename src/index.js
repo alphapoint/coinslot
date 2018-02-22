@@ -16,9 +16,10 @@ const supportedValidators = [
   new StellarValidator(),
   new DefaultValidator(),
 ];
+const supportedCurrencies = Object.values(SUPPORTED_CURRENCIES);
 
 export function validate(address, currency) {
-  if (!SUPPORTED_CURRENCIES[currency]) {
+  if (supportedCurrencies.indexOf(currency) === -1) {
     throw Error(`${currency} is not supported`);
   }
 

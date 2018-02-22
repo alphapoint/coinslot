@@ -21,7 +21,7 @@ describe('Index', () => {
       });
     };
 
-    Object.keys(SUPPORTED_CURRENCIES).forEach((SUPPORTED_CURRENCY) => {
+    Object.values(SUPPORTED_CURRENCIES).forEach((SUPPORTED_CURRENCY) => {
       testSupportOfCurrency(SUPPORTED_CURRENCY);
     });
   });
