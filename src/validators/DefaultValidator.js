@@ -3,16 +3,16 @@ import base58 from '../utils/base58';
 import BaseValidator from './BaseValidator';
 import SUPPORTED_CURRENCIES from '../supportedCurrencies';
 
-const BICTOIN_PREFIXES = {prod: ['00', '05'], testnet: ['6f', 'c4']};
+const BITCOIN_PREFIXES = {prod: ['00', '05'], testnet: ['6f', 'c4']};
 
 const PREFIXES = {
-  [SUPPORTED_CURRENCIES.bitcoin]: BICTOIN_PREFIXES,
+  [SUPPORTED_CURRENCIES.bitcoin]: BITCOIN_PREFIXES,
   [SUPPORTED_CURRENCIES.litecoin]: {prod: ['30', '05', '32'], testnet: ['6f', 'c4', '3a']},
   [SUPPORTED_CURRENCIES.dogecoin]: {prod: ['1e', '16'], testnet: ['71', 'c4']},
   [SUPPORTED_CURRENCIES.dash]: {prod: ['4c', '10'], testnet: ['8c', '13']},
   [SUPPORTED_CURRENCIES.bitcoin_gold]: {prod: ['26', '17']},
   [SUPPORTED_CURRENCIES.zcash]: {prod: ['1cb8', '1cbd'], testnet: ['1d25', '1cba']},
-  [SUPPORTED_CURRENCIES.tether]: BICTOIN_PREFIXES,
+  [SUPPORTED_CURRENCIES.tether]: BITCOIN_PREFIXES,
   [SUPPORTED_CURRENCIES.unobtamium]: {prod: ['82', '1e'], testnet: ['44', '1e']},
   [SUPPORTED_CURRENCIES.neo]: {prod: ['17']},
 };
