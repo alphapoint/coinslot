@@ -13,6 +13,7 @@ export default class EthereumValidator extends BaseValidator {
       SUPPORTED_CURRENCIES.status,
       SUPPORTED_CURRENCIES.singularDTV,
       SUPPORTED_CURRENCIES.genesis_coin,
+      SUPPORTED_CURRENCIES.walton_chain,
       SUPPORTED_CURRENCIES.ethereum_classic,
       SUPPORTED_CURRENCIES.ubiq,
     ]);

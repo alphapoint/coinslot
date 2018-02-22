@@ -78,6 +78,10 @@ describe('EthereumValidator', () => {
       test('Shold validate Genesis Coin address', () => {
         validAddress('0x9dfe4643C04078a46803edCC30a3291b76d4c20c');
       });
+
+      test('Shold validate Walton chain address', () => {
+        validAddress('0x564286362092d8e7936f0549571a803b203aaced');
+      });
     });
 
     describe('Ethereum classic', () => {

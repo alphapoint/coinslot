@@ -9,6 +9,14 @@ Cryptocurrencies we support:
 - bitcoin cash
 - bitcoin gold
 - ethereum
+- omise go
+  augur
+  eos
+  fuel
+  status
+  singularDTV
+  genesis coin
+  walton chain
 - ethereum classic
 - monero
 - ripple

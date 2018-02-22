@@ -13,6 +13,7 @@ export default {
   status: 'SNT',
   singularDTV: 'SNGLS',
   genesis_coin: 'GEN',
+  walton_chain: 'WTC',
   ethereum_classic: 'ETC',
   monero: 'XMR',
   ripple: 'XRP',
@@ -26,7 +27,6 @@ export default {
 
   // on the roadmap
   // cardano: 'cardano',
-  // walton_chain: 'walton_chain',
   // qtum: 'qtum',
   // wavescoin: 'wavescoin',
   // siacoin: 'siacoin',
