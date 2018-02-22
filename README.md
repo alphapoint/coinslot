@@ -10,13 +10,13 @@ Cryptocurrencies we support:
 - bitcoin gold
 - ethereum
 - omise go
-  augur
-  eos
-  fuel
-  status
-  singularDTV
-  genesis coin
-  walton chain
+- augur
+- eos
+- fuel
+- status
+- singularDTV
+- genesis coin
+- walton chain
 - ethereum classic
 - monero
 - ripple
