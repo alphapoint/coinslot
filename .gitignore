@@ -6,5 +6,6 @@ build/
 .swp
 .eslintcache
 .coverage
+.npmrc
 coverage/
 package-lock.json

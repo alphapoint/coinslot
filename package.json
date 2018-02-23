@@ -44,5 +44,8 @@
     "iota.lib.js": "^0.4.7",
     "jssha": "^2.3.1",
     "ripple-address-codec": "^2.0.1"
+  },
+  "publishConfig": {
+    "registry": "http://nexus.alphapoint.com:8087/repository/npm-private/"
   }
 }
