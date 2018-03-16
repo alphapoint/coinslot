@@ -1,10 +1,11 @@
 {
   "name": "coinslot",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "",
   "main": "dist/index.umd.js",
   "module": "dist/index.esm.js",
   "scripts": {
+    "prepublishOnly": "npm run build",
     "build": "rollup -c",
     "dev": "rollup -c -w",
     "test": "jest"
