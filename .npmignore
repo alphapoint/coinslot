@@ -1,0 +1,10 @@
+node_modules
+.idea/
+build/
+*.log
+.swp
+.eslintcache
+.coverage
+.npmrc
+coverage/
+package-lock.json
