@@ -1,6 +1,6 @@
 {
   "name": "coinslot",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "",
   "main": "dist/index.umd.js",
   "module": "dist/index.esm.js",
@@ -41,7 +41,7 @@
     "base32.js": "^0.1.0",
     "bchaddrjs": "^0.2.0",
     "crc": "^3.5.0",
-    "ethereum-address": "0.0.4",
+    "ethereum-address-es5": "0.0.5",
     "iota.lib.js": "^0.4.7",
     "jssha": "^2.3.1",
     "ripple-address-codec": "^2.0.1"

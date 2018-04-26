@@ -1,4 +1,4 @@
-import ethereumAddress from 'ethereum-address';
+import ethereumAddress from 'ethereum-address-es5';
 import BaseValidator from './BaseValidator';
 import SUPPORTED_CURRENCIES from '../supportedCurrencies';
 
