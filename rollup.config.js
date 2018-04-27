@@ -1,7 +1,7 @@
 import resolve from 'rollup-plugin-node-resolve';
 import commonjs from 'rollup-plugin-commonjs';
 import babel from 'rollup-plugin-babel';
-import minify from 'rollup-plugin-babel-minify';
+import uglify from 'rollup-plugin-uglify';
 import filesize from 'rollup-plugin-filesize';
 import builtins from 'rollup-plugin-node-builtins';
 import global from 'rollup-plugin-node-globals';
@@ -42,9 +42,7 @@ export default {
         'external-helpers',
       ],
     }),
-    minify({
-      comments: false,
-    }),
+    uglify(),
     filesize(),
     builtins(),
     global(),
