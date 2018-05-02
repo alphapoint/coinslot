@@ -6,6 +6,7 @@ import filesize from 'rollup-plugin-filesize';
 import builtins from 'rollup-plugin-node-builtins';
 import global from 'rollup-plugin-node-globals';
 import pkg from './package.json';
+import sizes from 'rollup-plugin-sizes';
 
 export default {
   input: 'src/index.js',
@@ -46,5 +47,6 @@ export default {
     filesize(),
     builtins(),
     global(),
+    sizes(),
   ],
 };
