@@ -1,5 +1,5 @@
 import cryptoUtils from '../utils/cryptoUtils';
-import base58 from '../utils/base58';
+import base58Check from '../utils/base58Check';
 import BaseValidator from './BaseValidator';
 import SUPPORTED_CURRENCIES from '../supportedCurrencies';
 
@@ -17,10 +17,6 @@ const PREFIXES = {
   [SUPPORTED_CURRENCIES.neo]: {prod: ['17']},
   [SUPPORTED_CURRENCIES.qtum]: {prod: ['3a', '32'], testnet: ['78', '6e']},
 };
-// RIPEMD-160 hash function produce a 160-bit output
-const bodyBytesCount = 20;
-// first 4 bytes are taken from SHA-256(SHA-256(input))
-const checksumBytesCount = 4;
 
 export default class DefaultValidator extends BaseValidator {
   constructor() {
@@ -31,23 +27,13 @@ export default class DefaultValidator extends BaseValidator {
     let decoded;
 
     try {
-      decoded = base58.decode(address);
+      decoded = base58Check.decode(address);
     } catch (e) {
       // if decoding fails, assume invalid address
       return null;
     }
 
-    const length = decoded.length;
-
-    if (length !== prefixLength + bodyBytesCount + checksumBytesCount) {
-      return null;
-    }
-
-    const checksum = cryptoUtils.toHex(decoded.slice(length - 4, length));
-    const body = cryptoUtils.toHex(decoded.slice(0, length - 4));
-    const goodChecksum = cryptoUtils.sha256(cryptoUtils.sha256(body)).substr(0, 8);
-
-    return checksum === goodChecksum ? cryptoUtils.toHex(decoded.slice(0, prefixLength)) : null;
+    return decoded ? cryptoUtils.toHex(decoded.slice(0, prefixLength)) : null;
   }
 
   /**
