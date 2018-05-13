@@ -39,7 +39,7 @@
     "rollup-plugin-uglify": "^3.0.0"
   },
   "dependencies": {
-    "bchaddrjs": "^0.2.0",
+    "big-integer": "^1.6.28",
     "iota.lib.js": "^0.4.7",
     "jssha": "^2.3.1"
   }
