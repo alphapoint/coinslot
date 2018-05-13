@@ -1,5 +1,4 @@
 import baseXCheck from './baseXCheck';
-
-const alphabet = '123456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz';
+import {alphabet} from './base58';
 
 export default baseXCheck(alphabet);

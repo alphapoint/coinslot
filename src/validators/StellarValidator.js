@@ -72,8 +72,7 @@ export function decodeCheck(versionByteName, encoded) {
 
 function calculateChecksum(payload) {
   // This code calculates CRC16-XModem checksum of payload
-  // and returns it as Buffer in little-endian order.
-  // const checksum = writeUInt16LE(crc16xmodem(payload), 0);
+  // and returns it as Buffer in little-endian order. 
   const checksum = writeUInt16LE(crc16xmodem(payload), 0);
 
   return checksum;

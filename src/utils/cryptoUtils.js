@@ -1,9 +1,4 @@
 import SHA from 'jssha/src/sha256';
-// import sha256 from 'crypto-js/sha256';
-// import SHA3 from 'crypto-js/sha3';
-// import crypto from 'crypto-js';
-// import hex from 'crypto-js';
-// console.log(hex);
 import sha3 from './sha3';
 
 const keccak256 = sha3.keccak256;
