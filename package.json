@@ -40,7 +40,6 @@
   },
   "dependencies": {
     "big-integer": "^1.6.28",
-    "iota.lib.js": "^0.4.7",
     "jssha": "^2.3.1"
   }
 }
