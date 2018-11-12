@@ -35,15 +35,11 @@
     "rollup-plugin-node-builtins": "^2.1.2",
     "rollup-plugin-node-globals": "^1.1.0",
     "rollup-plugin-node-resolve": "^3.0.3",
+    "rollup-plugin-sizes": "^0.4.2",
     "rollup-plugin-uglify": "^3.0.0"
   },
   "dependencies": {
-    "base32.js": "^0.1.0",
-    "bchaddrjs": "^0.2.0",
-    "crc": "^3.5.0",
-    "ethereum-address-es5": "0.0.5",
-    "iota.lib.js": "^0.4.7",
-    "jssha": "^2.3.1",
-    "ripple-address-codec": "^2.0.1"
+    "big-integer": "^1.6.28",
+    "jssha": "^2.3.1"
   }
 }

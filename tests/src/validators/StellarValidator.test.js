@@ -24,6 +24,7 @@ describe('StellarValidator', () => {
     test('Shold validate stellar address', () => {
       validAddress('GCIXKHQ4K7IMZTTMHHIIBW5JJGATT7HCCFINS6EDZ7R4TGVHTKLYGZY6');
       validAddress('GAI3GJ2Q3B35AOZJ36C4ANE3HSS4NK7WI6DNO4ZSHRAX6NG7BMX6VJER');
+      validAddress('GA7MREQ7673YDVANF4WBPN7LBQM4BSH4BQUFUTC4YLSSQCQUQTXRVBZN');
     });
 
     describe('Incorrect addresses', () => {

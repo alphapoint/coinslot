@@ -1,6 +1,9 @@
 import BaseValidator from './BaseValidator';
 import SUPPORTED_CURRENCIES from '../supportedCurrencies';
-import rippleAddressApi from 'ripple-address-codec';
+import baseXCheck from '../utils/baseXCheck';
+
+const alphabet = 'rpshnaf39wBUDNEGHJKLM4PQRST7VWXYZ2bcdeCg65jkm8oFqi1tuvAxyz';
+const base58ripple = baseXCheck(alphabet);
 
 export default class RippleValidator extends BaseValidator {
   constructor() {
@@ -8,6 +11,21 @@ export default class RippleValidator extends BaseValidator {
   }
 
   validate(address, currency) {
-    return rippleAddressApi.isValidAddress(address);
+
+    try {
+      const decoded = base58ripple.decode(address);
+      if (!decoded) {
+        return false;
+      }
+      return this.isValidVersion(decoded);
+    } catch (err) {
+      return false;
+    }
+  }
+
+  isValidVersion(decodedArray) {
+    // version should always be 0
+    const version = decodedArray.shift();
+    return version === 0;
   }
 }
