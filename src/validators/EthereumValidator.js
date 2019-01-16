@@ -37,10 +37,11 @@ const isValidAddress = function isAddress(address) {
   }
 };
 
-const isChecksumAddress = function isChecksumAddress(address) {
+const isChecksumAddress = function isChecksumAddress(addressArg) {
   // Check each case
-  const addressHash = cryptoUtils.sha3(address.replace('0x', '').toLowerCase());
-
+  const address = addressArg.replace('0x', '');
+  const addressHash = cryptoUtils.sha3(address.toLowerCase());
+  
   for (let i = 0; i < 40; i++) {
     // The nth letter should be uppercase if the nth digit of casemap is 1
     if ((parseInt(addressHash[i], 16) > 7 && address[i].toUpperCase() !== address[i]) || (parseInt(addressHash[i], 16) <= 7 && address[i].toLowerCase() !== address[i])) {
