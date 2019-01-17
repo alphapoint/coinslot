@@ -1,6 +1,6 @@
 {
   "name": "coinslot",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "",
   "main": "dist/index.umd.js",
   "module": "dist/index.esm.js",
@@ -41,7 +41,6 @@
   },
   "dependencies": {
     "big-integer": "^1.6.28",
-    "crypto-js": "^3.1.9-1",
     "jssha": "^2.3.1"
   }
 }
