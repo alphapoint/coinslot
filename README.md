@@ -1,5 +1,5 @@
 # Coinslot
-Walled address validator.
+Wallet address validator.
 
 Cryptocurrencies we support:
 - bitcoin
