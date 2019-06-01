@@ -94,18 +94,34 @@ describe('DefaultValidator', () => {
     };
 
     describe('Bitcoin validation', () => {
-      test('Valid addresses', () => {
-        validAddress('12QeMLzSrB8XH8FvEzPMVoRxVAzTr5XM2y', SUPPORTED_CURRENCIES.bitcoin);
-        validAddress('12KYrjTdVGjFMtaxERSk3gphreJ5US8aUP', SUPPORTED_CURRENCIES.bitcoin);
-        validAddress('mzBc4XEFSdzCDcTxAgf6EZXgsZWpztRhef', SUPPORTED_CURRENCIES.bitcoin);
-
-        // p2sh addresses
-        validAddress('3NJZLcZEEYBpxYEUGewU4knsQRn1WM5Fkt', SUPPORTED_CURRENCIES.bitcoin);
-        validAddress('2MxKEf2su6FGAUfCEAHreGFQvEYrfYNHvL7', SUPPORTED_CURRENCIES.bitcoin);
-      });
-
       test('Invalid addresses', () => {
         commonInvalid(SUPPORTED_CURRENCIES.bitcoin);
+      });
+
+      describe('Valid formats', () => {
+        test('p2pkh', () => {
+          validAddress('12QeMLzSrB8XH8FvEzPMVoRxVAzTr5XM2y', SUPPORTED_CURRENCIES.bitcoin);
+          validAddress('12KYrjTdVGjFMtaxERSk3gphreJ5US8aUP', SUPPORTED_CURRENCIES.bitcoin);
+          validAddress('mzBc4XEFSdzCDcTxAgf6EZXgsZWpztRhef', SUPPORTED_CURRENCIES.bitcoin);
+          validAddress('1AGNa15ZQXAZUgFiqJ2i7Z2DPU2J6hW62i', SUPPORTED_CURRENCIES.bitcoin);
+        });
+
+        // p2sh addresses
+        test('p2sh address', () => {
+          validAddress('3NJZLcZEEYBpxYEUGewU4knsQRn1WM5Fkt', SUPPORTED_CURRENCIES.bitcoin);
+          validAddress('2MxKEf2su6FGAUfCEAHreGFQvEYrfYNHvL7', SUPPORTED_CURRENCIES.bitcoin);
+        });
+
+        // Segwit addresses.
+        test('Segwit addresses', () => {
+          validAddress('bc1qc7slrfxkknqcq2jevvvkdgvrt8080852dfjewde450xdlk4ugp7szw5tk9', SUPPORTED_CURRENCIES.bitcoin);
+          validAddress('bc1qar0srrr7xfkvy5l643lydnw9re59gtzzwf5mdq', SUPPORTED_CURRENCIES.bitcoin);
+
+          /**
+           * @TODO 
+           *  validate tb addresses?
+           */
+        });
       });
     });
 
