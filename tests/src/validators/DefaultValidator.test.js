@@ -116,11 +116,6 @@ describe('DefaultValidator', () => {
         test('Segwit addresses', () => {
           validAddress('bc1qc7slrfxkknqcq2jevvvkdgvrt8080852dfjewde450xdlk4ugp7szw5tk9', SUPPORTED_CURRENCIES.bitcoin);
           validAddress('bc1qar0srrr7xfkvy5l643lydnw9re59gtzzwf5mdq', SUPPORTED_CURRENCIES.bitcoin);
-
-          /**
-           * @TODO 
-           *  validate tb addresses?
-           */
         });
       });
     });
