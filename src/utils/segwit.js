@@ -77,6 +77,8 @@ export const encode = (hrp, version, program) => {
 };
 
 export const isValidAddress = (address, humanReadablePrefix) => {
+  if (!address) return false;
+
   let hrp = humanReadablePrefix || 'bc';
   let ret = decode(hrp, address);
 

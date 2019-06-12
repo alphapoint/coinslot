@@ -87,6 +87,7 @@ describe('DefaultValidator', () => {
     };
 
     const commonInvalid = (currency) => {
+      invalidAddress(undefined, currency);
       invalidAddress('', currency);
       invalidAddress('%%@', currency);
       invalidAddress('1A1zP1ePQGefi2DMPTifTL5SLmv7DivfNa', currency);
