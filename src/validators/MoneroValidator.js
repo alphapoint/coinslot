@@ -6,8 +6,9 @@ import SUPPORTED_CURRENCIES from '../supportedCurrencies';
  */
 export default class MoneroValidator extends RegExpValidator {
   constructor() {
-    super([
-      SUPPORTED_CURRENCIES.monero,
-    ], /^4([0-9]|[A-B])([0-9a-zA-Z]){93}$/);
+    super(
+      [SUPPORTED_CURRENCIES.monero],
+      /^4([0-9]|[A-B])([0-9a-zA-Z]){93}$|^4([0-9]|[A-B])([0-9a-zA-Z]){104}$/
+    );
   }
 }
